@@ -124,7 +124,7 @@ print(taylorCopy)*/
 //    var type: String
 //}
 //let jakiro = Pokemon(name: "Jakiro", type: "Magikal")
-import UIKit
+/*import UIKit
 struct Person{
     var name: String
     var age: Int
@@ -152,7 +152,16 @@ func langSum(group:[Person]){
 langSum(group: group)
 class Animal:Person{
     
-}
+}*/
+var longitude: Float
+longitude = -86.783333
+longitude = -186.783333
+longitude = -1286.783333
+longitude = -12386.783333
+longitude = -123486.783333
+longitude = -1234586.783333
+
+
 
 
 

@@ -73,19 +73,20 @@ class DetailViewController: UITableViewController {
         }
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 5{
-            tableView.deselectRow(at: indexPath, animated: true)
+        guard indexPath.row == 5 else{ return }
+        
+        tableView.deselectRow(at: indexPath, animated: true)
             
-            let defaults = UserDefaults.standard
-            var favorites = defaults.object(forKey:"Favorites") as? [String] ?? [String]()
+        let defaults = UserDefaults.standard
+        var favorites = defaults.object(forKey:"Favorites") as? [String] ?? [String]()
             
-            if let index = favorites.index(of: pokemon.name){
-                favorites.remove(at: index)
-            }else{
-                favorites.append(pokemon.name)
-            }
-            defaults.set(favorites, forKey: "Favorites")
-            setFavoritesLabel()
+        if let index = favorites.index(of: pokemon.name){
+            favorites.remove(at: index)
+        }else{
+            favorites.append(pokemon.name)
         }
+        defaults.set(favorites, forKey: "Favorites")
+        setFavoritesLabel()
+        
     }
 }

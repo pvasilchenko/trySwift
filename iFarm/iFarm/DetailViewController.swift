@@ -31,6 +31,7 @@ class DetailViewController: UITableViewController {
         age.text = "Age: " + animal.age
         food.text = "Food: " + animal.food.joined(separator: ", ")
         careProcedures.text = "Care: " + animal.careProcedures.joined(separator: ", ")
+        setVaccinatedLabel()
     }
     override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
