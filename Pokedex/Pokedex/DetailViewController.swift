@@ -12,13 +12,18 @@ import SafariServices
 class DetailViewController: UITableViewController {
 
     @IBOutlet var imageView: UIImageView!
-    
-    var pokemon: Pokemon!
     @IBOutlet var evolution: UILabel!
     @IBOutlet var summery: UILabel!
     @IBOutlet var type: UILabel!
     @IBOutlet var name: UILabel!
     @IBOutlet var taggleFavarites: UILabel!
+    
+    var pokemon: Pokemon!
+    
+    required init?(coder aDecoder: NSCoder){
+        super.init(coder: aDecoder)
+        hidesBottomBarWhenPushed = true
+    }
     
     
     override func viewDidLoad() {

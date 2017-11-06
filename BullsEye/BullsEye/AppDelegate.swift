@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  Pokedex
+//  BullsEye
 //
-//  Created by pVasilchenko on 18.10.2017.
+//  Created by pVasilchenko on 05.11.2017.
 //  Copyright © 2017 pVasilchenko. All rights reserved.
 //
 
@@ -16,7 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        window?.backgroundColor = UIColor.white
         return true
     }
 

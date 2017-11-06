@@ -217,10 +217,10 @@
             </objects>
             <point key="canvasLocation" x="1015.2" y="98.50074962518741"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Favorites View Controller-->
         <scene sceneID="1e7-hG-J7e">
             <objects>
-                <collectionViewController id="kqY-3y-giJ" sceneMemberID="viewController">
+                <collectionViewController id="kqY-3y-giJ" customClass="FavoritesViewController" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="V4b-hj-MCx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

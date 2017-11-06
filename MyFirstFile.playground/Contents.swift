@@ -93,7 +93,10 @@ var taylorCopy = taylor
 taylorCopy.shoes = "flip flops"
 
 print(taylor)
-print(taylorCopy)*/
+print(taylorCopy)
+ 
+ */
+
 //import UIKit
 //
 //var songs = ["Shake it Off", "You Belong with Me", "Back to December"]
@@ -124,7 +127,9 @@ print(taylorCopy)*/
 //    var type: String
 //}
 //let jakiro = Pokemon(name: "Jakiro", type: "Magikal")
-/*import UIKit
+
+/*
+ import UIKit
 struct Person{
     var name: String
     var age: Int
@@ -152,19 +157,101 @@ func langSum(group:[Person]){
 langSum(group: group)
 class Animal:Person{
     
-}*/
-var longitude: Float
+}
+ */
+/*
+ var longitude: Float
 longitude = -86.783333
 longitude = -186.783333
 longitude = -1286.783333
 longitude = -12386.783333
 longitude = -123486.783333
 longitude = -1234586.783333
+*/
+import CoreFoundation
+sin(45 * Double.pi / 180)
+// 0.7071067811865475
+
+cos(135 * Double.pi / 180)
+
+sqrt(2.0)
+//**//var pokiAge = [12, 4, 17, 2]
+//var max = pokiAge.max()
+//print(max)
+
+import UIKit
 
 
+func minMaxElem(array: [Int]) -> (Int, Int){
+    var maxElem = array[0]
+    var minElem = array[0]
+    for value in array[1...array.count - 1]{
+        if(value < minElem){
+            minElem = value
+        }else if(value > maxElem){
+            maxElem = value
+        }
+    }
+    return (minElem, maxElem)
+}
 
+func avarage(array:[Int]) -> Int{
+    let elementsSum = array.reduce(0, +)
+    return elementsSum/array.count
+}
 
+func lanthOf(array: [String]) -> ([Int], Int){
+    var length: [Int]
+    
+    length = array.map{$0.characters.count}
 
+    return (length,  avarage(array: length))
+}
+
+let group: [String] = ["Taylor", "Antony", "Barbara", "Helen"]
+var length: [Int]
+var avarageElem: Int
+var maxElem: Int
+var minElem: Int
+
+(length, avarageElem) = lanthOf(array: group)
+(minElem, maxElem) = minMaxElem(array: length)
+
+print ("Your array is: \(group)")
+print("Amount of array's elements is: \(group.count)")
+print("Length of array's elements is: \(length)")
+print("Min element of your array is: \(minElem)")
+print("Max elem of your array is: \(maxElem)")
+
+print(length.map{5...6 ~= $0 ? "In average": "Outside average"})
+
+var elements: [Double] = [36, 49, 64, 81]
+elements.map(sqrt)
+elements.map(sin)
+
+var DBcoffe: [String] = ["12", "11", "20", "Americano", "Capuccino"]
+var cost = [Int]()
+cost = DBcoffe.flatMap{Int($0)}
+print(cost)
+let files = (1...10).flatMap{try? String(contentsOfFile: "someFile: \($0).txt")}
+
+struct Person{
+    var employment: String
+    var name: String
+    var age: Int
+    var workHistory = [String]()
+    var hobby = [String]()
+}
+var office = [Person]()
+office.append(Person(employment: "developer", name: "Victor Abrams", age: 22, workHistory: ["IOSdeveloper"], hobby: ["swimming", "tennise"]))
+office.append(Person(employment: "tester", name: "Greg Gordan", age: 21, workHistory: ["Tester"], hobby: ["football"]))
+print(office.map{$0.name})
+
+let fibonacciNumbers = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
+let evenFibonacci = fibonacciNumbers.filter{ $0 % 2 == 0 }
+print(evenFibonacci)
+var name = office.map{ $0.name }
+print(name.filter{$0.hasPrefix("Vic")})
 
 
 

@@ -204,11 +204,13 @@
             </objects>
             <point key="canvasLocation" x="1788" y="126.38680659670166"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Animals-->
         <scene sceneID="7se-at-A2Y">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="V0g-fG-EYv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="3pJ-PQ-wL9"/>
+                    <tabBarItem key="tabBarItem" title="Animals" image="animals" id="3pJ-PQ-wL9">
+                        <inset key="imageInsets" minX="0.0" minY="108" maxX="0.0" maxY="92"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Pu2-Qe-okd">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -297,4 +299,7 @@
             <point key="canvasLocation" x="147.19999999999999" y="896.85157421289364"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="animals" width="512" height="512"/>
+    </resources>
 </document>

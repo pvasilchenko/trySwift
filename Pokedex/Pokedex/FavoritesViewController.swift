@@ -13,23 +13,31 @@ class FavoritesViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let defaults = UserDefaults.standard
-        favorites = defaults.object(forKey:"Favorites") as? [String] ?? [String]()
         
-        collectionView?.reloadData()
+        title = "Favorites"
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        let defaults = UserDefaults.standard
+        favorites = defaults.object(forKey:"Favorites") as? [String] ?? [String]()
+        
+        collectionView?.reloadData()
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return favorites.count
     }
     
-//    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
-//    }
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
+        let pokemon = favorites[indexPath.item]
+        if let imageView = cell.viewWithTag(2488) as? UIImageView{
+            imageView.image = UIImage(named: pokemon)
+        }
+        return cell
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
