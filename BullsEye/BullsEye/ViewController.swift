@@ -11,21 +11,42 @@ import UIKit
 class ViewController: UIViewController {
     
     
+    @IBOutlet var scoreLabel: UILabel!
+    @IBOutlet var roundLabel: UILabel!
     @IBOutlet var targetLabel: UILabel!
     @IBOutlet weak var slider: UISlider!
-    var currentValue: Int = 0
-    var targetValue: Int = 0
+    var currentValue = 0
+    var targetValue = 0
+    var roundValue = 0
+    var score = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        startNewRound()
         
-        // Do any additional setup after loading the view, typically from a nib.
+        startNewGame()
     }
    @IBAction func showAlert(){
+        let difference = abs(targetValue - currentValue)
+        var points = 100 - difference
+        let title: String
+        if (difference == 0){
+            title = "Bull's Eye"
+            points += 100
+        }else if (difference) < 5{
+            title = "You almost did it!"
+            if(difference == 1){
+                points += 50
+            }
+        }else if (difference <= 10){
+            title = "Pretty good!"
+        }else{
+            title = "You can better..."
+        }
+        score += points
         let message = "The value of the slider is:\(currentValue)" +
-                        "\nThe target value is: \(targetValue)"
-        let alert = UIAlertController(title: "Hello, World!", message: message, preferredStyle: .alert)
+                        "\n The difference is: \(difference)" +
+                        "\n You scored: \(points) points"
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(alertAction)
         present(alert, animated: true, completion: nil)
@@ -34,12 +55,25 @@ class ViewController: UIViewController {
     @IBAction func sliderMoved(_ slider: UISlider){
         currentValue = lroundf(slider.value)
     }
+    
+    @IBAction func startNewGame(){
+        roundValue = 0
+        score = 0
+        startNewRound()
+    }
+    
     func startNewRound(){
         targetValue = 1 + Int(arc4random_uniform(100))
-        targetLabel.text = String(targetValue)
         currentValue = 50
         slider.value = Float(currentValue)
+        roundValue += 1
+        updateLabels()
     }
-
+    
+    func updateLabels(){
+        targetLabel.text = String(targetValue)
+        roundLabel.text = String(roundValue)
+        scoreLabel.text = String(score)
+    }
 }
 
