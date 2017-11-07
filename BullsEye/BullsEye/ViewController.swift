@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import QuartzCore
 
 class ViewController: UIViewController {
     
@@ -24,6 +25,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         startNewGame()
+        
+        // slider UI
+        let thumbImageNormal = #imageLiteral(resourceName: "SliderThumb-Normal")
+        slider.setThumbImage(thumbImageNormal, for: .normal)
+        let thumbImageHighlighted = #imageLiteral(resourceName: "SliderThumb-Highlighted")
+        slider.setThumbImage(thumbImageHighlighted, for: .highlighted)
+        //let insets = UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 14)
     }
    @IBAction func showAlert(){
         let difference = abs(targetValue - currentValue)
@@ -46,12 +54,14 @@ class ViewController: UIViewController {
         let message = "The value of the slider is:\(currentValue)" +
                         "\n The difference is: \(difference)" +
                         "\n You scored: \(points) points"
+    
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let alertAction = UIAlertAction(title: "OK", style: .default,
+                                            handler: {action in self.startNewRound()})
         alert.addAction(alertAction)
         present(alert, animated: true, completion: nil)
-        startNewRound()
     }
+    
     @IBAction func sliderMoved(_ slider: UISlider){
         currentValue = lroundf(slider.value)
     }
@@ -60,6 +70,12 @@ class ViewController: UIViewController {
         roundValue = 0
         score = 0
         startNewRound()
+        //add core animation
+        let transition = CATransition()
+        transition.type = kCATransitionFade
+        transition.duration = 1
+        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        view.layer.add(transition, forKey: nil)
     }
     
     func startNewRound(){

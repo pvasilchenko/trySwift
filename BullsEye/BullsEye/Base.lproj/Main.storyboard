@@ -12,6 +12,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Kefa.ttf">
+            <string>Kefa-Regular</string>
+        </array>
         <array key="Papyrus.ttc">
             <string>Papyrus</string>
         </array>
@@ -25,12 +28,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xeO-Eh-FGk">
-                                <rect key="frame" x="250" y="137" width="68" height="46"/>
-                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="22"/>
-                                <state key="normal" title="Hit me!">
-                                    <color key="titleColor" red="0.71923875810000004" green="0.57215410470000005" blue="0.34526836869999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xeO-Eh-FGk">
+                                <rect key="frame" x="234" y="141.5" width="100" height="37"/>
+                                <state key="normal" title="Hit me!" backgroundImage="Button-Normal">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <state key="highlighted" backgroundImage="Button-Highlighted"/>
                                 <connections>
                                     <action selector="showAlert" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dge-XF-isr"/>
                                 </connections>
@@ -77,41 +80,45 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oVn-qR-eyq">
-                                <rect key="frame" x="158" y="275" width="50" height="21"/>
+                                <rect key="frame" x="110" y="275" width="50" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYM-9d-ULL">
-                                <rect key="frame" x="222" y="275.5" width="10.5" height="20.5"/>
+                                <rect key="frame" x="174" y="275.5" width="10.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Round:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ufc-S9-7zQ">
-                                <rect key="frame" x="384.5" y="275" width="54" height="21"/>
+                                <rect key="frame" x="396.5" y="275" width="54" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nUW-5D-RCi">
-                                <rect key="frame" x="455.5" y="275.5" width="10.5" height="20.5"/>
+                                <rect key="frame" x="467.5" y="275.5" width="10.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eGf-1P-7cF">
-                                <rect key="frame" x="32" y="270" width="68" height="30"/>
-                                <state key="normal" title="Start over">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eGf-1P-7cF">
+                                <rect key="frame" x="32" y="275" width="20" height="22"/>
+                                <state key="normal" image="StartOverIcon" backgroundImage="StartOverIcon">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
                                     <action selector="startNewGame" destination="BYZ-38-t0r" eventType="touchUpInside" id="dFM-8d-OqO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gAs-LA-SWG">
-                                <rect key="frame" x="526" y="274" width="22" height="22"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gAs-LA-SWG">
+                                <rect key="frame" x="538" y="274" width="10" height="22"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="InfoButton"/>
+                                <connections>
+                                    <segue destination="Y1w-9b-bpn" kind="presentation" modalTransitionStyle="flipHorizontal" id="r42-S1-SQu"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.97653931379318237" green="0.97737306356430054" blue="0.91549223661422729" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -160,5 +167,62 @@
             </objects>
             <point key="canvasLocation" x="36.971830985915496" y="31.875"/>
         </scene>
+        <!--About View Controller-->
+        <scene sceneID="bZx-Sy-OCc">
+            <objects>
+                <viewController id="Y1w-9b-bpn" customClass="AboutViewController" customModule="BullsEye" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PaB-jS-J25">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qxm-f2-U15">
+                                <rect key="frame" x="20" y="20" width="528" height="148"/>
+                                <color key="backgroundColor" red="0.97653931380000003" green="0.97737306359999998" blue="0.91549223660000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="148" id="jQh-VB-SIa"/>
+                                </constraints>
+                                <string key="text">*** Bull’s Eye ***
+Welcome to the awesome game of Bull’s Eye where you can win points and fame by dragging a slider.
+Your goal is to place the slider as close as possible to the target
+value. The closer you are, the more points you score.  Enjoy!</string>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XEd-Zo-r5c">
+                                <rect key="frame" x="252" y="270" width="65" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="LFF-KK-d9W"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="22"/>
+                                <state key="normal" title="Close">
+                                    <color key="titleColor" red="0.71923875810000004" green="0.57215410470000005" blue="0.34526836869999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="close" destination="Y1w-9b-bpn" eventType="touchUpInside" id="4rp-X7-Qel"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.97653931380000003" green="0.97737306359999998" blue="0.91549223660000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="qxm-f2-U15" firstAttribute="centerX" secondItem="XEd-Zo-r5c" secondAttribute="centerX" id="IZS-C8-NsA"/>
+                            <constraint firstAttribute="bottom" secondItem="XEd-Zo-r5c" secondAttribute="bottom" constant="20" symbolic="YES" id="O5c-qt-iF8"/>
+                            <constraint firstItem="qxm-f2-U15" firstAttribute="top" secondItem="PaB-jS-J25" secondAttribute="top" constant="20" symbolic="YES" id="TQA-CZ-0CL"/>
+                            <constraint firstItem="XEd-Zo-r5c" firstAttribute="centerX" secondItem="PaB-jS-J25" secondAttribute="centerX" id="Ysb-p9-u79"/>
+                            <constraint firstItem="XEd-Zo-r5c" firstAttribute="leading" secondItem="kjy-Og-sgv" secondAttribute="leading" constant="252" id="hQa-lw-Lc2"/>
+                            <constraint firstItem="qxm-f2-U15" firstAttribute="leading" secondItem="PaB-jS-J25" secondAttribute="leadingMargin" id="x1W-nd-tV0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kjy-Og-sgv"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ihh-5d-Q4d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="839.78873239436621" y="31.875"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="Button-Highlighted" width="100" height="37"/>
+        <image name="Button-Normal" width="100" height="37"/>
+        <image name="InfoButton" width="10" height="22"/>
+        <image name="StartOverIcon" width="20" height="20"/>
+    </resources>
 </document>
