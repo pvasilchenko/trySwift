@@ -178,7 +178,7 @@ sqrt(2.0)
 //**//var pokiAge = [12, 4, 17, 2]
 //var max = pokiAge.max()
 //print(max)
-
+/*
 import UIKit
 
 
@@ -234,7 +234,7 @@ var cost = [Int]()
 cost = DBcoffe.flatMap{Int($0)}
 print(cost)
 let files = (1...10).flatMap{try? String(contentsOfFile: "someFile: \($0).txt")}
-
+*/
 struct Person{
     var employment: String
     var name: String
@@ -253,5 +253,5 @@ print(evenFibonacci)
 var name = office.map{ $0.name }
 print(name.filter{$0.hasPrefix("Vic")})
 
-
+print(fibonacciNumbers.count)
 
