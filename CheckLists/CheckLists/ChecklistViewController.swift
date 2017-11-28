@@ -51,32 +51,6 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
     var items: [CheckListItem]
     required init?(coder aDecoder: NSCoder) {
         items = [CheckListItem]()
-        
-//        let row0item = CheckListItem()
-//        row0item.checked = true
-//        row0item.text = "Walk the dog"
-//        items.append(row0item)
-//
-//        let row1item = CheckListItem()
-//        row1item.checked = false
-//        row1item.text = "Brush teeth"
-//        items.append(row1item)
-//
-//        let row2item = CheckListItem()
-//        row2item.checked = true
-//        row2item.text = "Lern iOS development"
-//        items.append(row2item)
-//
-//        let row3item = CheckListItem()
-//        row3item.text = "Soccer practice"
-//        row3item.checked = false
-//        items.append(row3item)
-//
-//        let row4item = CheckListItem()
-//        row4item.text = "Eat ice cream"
-//        row4item.checked = true
-//        items.append(row4item)
-//
         super.init(coder:aDecoder)
         loadCheckListItems()
         print("Document's folder is: \(documentDictionary())")
@@ -86,7 +60,6 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Checklist"
         // Do any additional setup after loading the view, typically from a nib.
     }
     
