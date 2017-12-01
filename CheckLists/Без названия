@@ -1,0 +1,24 @@
+// checklist first generation save/load
+
+func documentDictionary() -> URL{
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+    }
+    func dataFilePath() -> URL {
+        return documentDictionary().appendingPathComponent("CheckList.plist")
+    }
+    func saveCheckListItems(){
+        let data = NSMutableData()
+        let archiver = NSKeyedArchiver(forWritingWith: data)
+        archiver.encode(checklist.items, forKey: "CheckListItem")
+        archiver.finishEncoding()
+        data.write(to: dataFilePath(), atomically: true)
+    }
+    func loadCheckListItems(){
+        let path = dataFilePath()
+        if let data = try? Data(contentsOf: path){
+            let unarchiver = NSKeyedUnarchiver(forReadingWith: data)
+            checklist.items = unarchiver.decodeObject(forKey: "CheckListItem") as! [CheckListItem]
+            unarchiver.finishDecoding()
+        }
+    }
