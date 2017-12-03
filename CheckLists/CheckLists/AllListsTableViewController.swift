@@ -22,55 +22,21 @@ class AllListsTableViewController: UITableViewController,
             controller.checklistToEdit = nil
         }
     }
+    var dataModel: DataModel!
     
-    var lists: [Checklist]
     
-    required init?(coder aDecoder: NSCoder){
-        lists = [Checklist]()
-        super.init(coder: aDecoder)
-        
-        var list = Checklist(name: "Birthday")
-        lists.append(list)
-        list = Checklist(name: "House work")
-        lists.append(list)
-        list = Checklist(name: "Holidays preparation")
-        lists.append(list)
-        list = Checklist(name: "To-do")
-        lists.append(list)
-        
-        for list in lists{
-            let item = CheckListItem()
-            item.text = "item for: \(list.name)"
-            list.items.append(item)
-        }
-    }
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Table view data source
-
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return lists.count
+        return dataModel.lists.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = makeCell(for: tableView)
-        let checklist = lists[indexPath.row]
+        let checklist = dataModel.lists[indexPath.row]
         cell.textLabel!.text = checklist.name
         cell.accessoryType = .detailDisclosureButton
         cell.tintColor = UIColor.orange
@@ -87,7 +53,7 @@ class AllListsTableViewController: UITableViewController,
     override func tableView(_ tableView: UITableView,
                             didSelectRowAt indexPath: IndexPath) {
         
-        let checklist = lists[indexPath.row]
+        let checklist = dataModel.lists[indexPath.row]
         performSegue(withIdentifier: "ShowCheckList", sender: checklist)
     }
     
@@ -96,8 +62,8 @@ class AllListsTableViewController: UITableViewController,
     }
     
     func listDetaileViewController(_controller: ListDetaileViewController, didFinishAdding checklist: Checklist) {
-        let newRowIndex = lists.count
-        lists.append(checklist)
+        let newRowIndex = dataModel.lists.count
+        dataModel.lists.append(checklist)
         let indexPath = IndexPath(row: newRowIndex, section: 0)
         let indexPathes = [indexPath]
         tableView.insertRows(at: indexPathes, with: .automatic)
@@ -106,7 +72,7 @@ class AllListsTableViewController: UITableViewController,
     }
     
     func listDetaileViewController(_controller: ListDetaileViewController, didFinishEditing checklist: Checklist) {
-        if let index = lists.index(of: checklist){
+        if let index = dataModel.lists.index(of: checklist){
             let indexPath = IndexPath(row: index, section: 0)
             if let cell = tableView.cellForRow(at: indexPath){
                 cell.textLabel!.text = checklist.name
@@ -115,7 +81,7 @@ class AllListsTableViewController: UITableViewController,
         dismiss(animated: true, completion: nil)
     }
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        lists.remove(at: indexPath.row)
+        dataModel.lists.remove(at: indexPath.row)
         
         let indexPathes = [indexPath]
         tableView.deleteRows(at: indexPathes, with: .automatic)
@@ -128,14 +94,32 @@ class AllListsTableViewController: UITableViewController,
         let controller = navigationController.topViewController
                                                  as! ListDetaileViewController
         controller.delegate = self
-        let checklist = lists[indexPath.row]
+        let checklist = dataModel.lists[indexPath.row]
         controller.checklistToEdit = checklist
         
         present(navigationController, animated: true, completion: nil)
     }
-    func documentsDictionary()->URL{
-        
-    }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
