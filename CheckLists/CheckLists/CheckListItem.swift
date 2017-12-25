@@ -7,10 +7,13 @@
 //
 
 import Foundation
-class CheckListItem: NSObject, NSCoding{
-    func encode(with aCoder: NSCoder) {
-        aCoder.encode(text, forKey: "Text")
-        aCoder.encode(checked, forKey: "Checked")
+
+class CheckListItem: NSObject, NSCoding {
+    var text = ""
+    var checked = false
+    
+    override init() {
+        super.init()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -18,13 +21,14 @@ class CheckListItem: NSObject, NSCoding{
         checked = aDecoder.decodeBool(forKey: "Checked")
         super.init()
     }
-    override init(){
-        super.init()
-    }
     
-    var text = ""
-    var checked = false
-    func toggleChecked(){
+    func toggleChecked() {
         checked = !checked
     }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(text, forKey: "Text")
+        aCoder.encode(checked, forKey: "Checked")
+    }
 }
+

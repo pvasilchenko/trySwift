@@ -8,34 +8,69 @@
 
 import Foundation
 
-class DataModel{
-    init(){
-        loadChecklists()
-    }
-    var lists = [Checklist]()
+class DataModel {
+    var lists = [CheckList]()
     
-    func documentsDirectory()->URL{
-        let pathes = FileManager.default.urls(for: .documentDirectory,
-                                              in: .userDomainMask)
-        return pathes[0]
+    init() {
+        loadChecklists()
+        registerDefaults()
+        handleFirstTime()
     }
-    func dataFilePath() -> URL{
+    
+    func documentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+    }
+    
+    func dataFilePath() -> URL {
         return documentsDirectory().appendingPathComponent("Checklists.plist")
     }
-    func saveChecklists(){
+    
+    func saveChecklists() {
         let data = NSMutableData()
         let archiver = NSKeyedArchiver(forWritingWith: data)
         archiver.encode(lists, forKey: "Checklists")
         archiver.finishEncoding()
         data.write(to: dataFilePath(), atomically: true)
     }
-    func loadChecklists(){
+    
+    func loadChecklists() {
         let path = dataFilePath()
-        if let data = try? Data(contentsOf: path){
+        if let data = try? Data(contentsOf: path) {
             let unarchiver = NSKeyedUnarchiver(forReadingWith: data)
-            lists = unarchiver.decodeObject(forKey: "Checklists") as! [Checklist]
+            lists = unarchiver.decodeObject(forKey: "Checklists") as! [CheckList]
             unarchiver.finishDecoding()
         }
     }
-
+    
+    func registerDefaults() {
+        let dictionary: [String: Any] = [ "CheckListIndex": -1,
+                                          "FirstTime": true ]
+        
+        UserDefaults.standard.register(defaults: dictionary)
+    }
+    
+    func handleFirstTime() {
+        let userDefaults = UserDefaults.standard
+        let firstTime = userDefaults.bool(forKey: "FirstTime")
+        
+        if firstTime {
+            let checklist = CheckList(name: "List")
+            lists.append(checklist)
+            
+            indexOfSelectedChecklist = 0
+            userDefaults.set(false, forKey: "FirstTime")
+            userDefaults.synchronize()
+        }
+    }
+    
+    var indexOfSelectedChecklist: Int {
+        get {
+            return UserDefaults.standard.integer(forKey: "CheckListIndex")
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "CheckListIndex")
+            UserDefaults.standard.synchronize()
+        }
+    }
 }

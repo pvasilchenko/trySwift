@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Checklist: NSObject, NSCoding {
+class CheckList: NSObject, NSCoding {
     func encode(with aCoder: NSCoder) {
         aCoder.encode(name, forKey: "Name")
         aCoder.encode(items, forKey: "Items")
