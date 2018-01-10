@@ -16,6 +16,7 @@ var upperCaseAlphabet = [String]()
 for i in alphabet{
     upperCaseAlphabet.append(i.uppercased())
 }
+var l = alphabet.count - 1
 for i in (0..<alphabet.count).reversed(){
     reversedAlphabet.append(alphabet[i])
 }
@@ -37,9 +38,8 @@ print(upperCaseAlphabet)
                                                                     True - white cell
                                                                     False - black cell
  
- */
 // 1
-/*
+ 
 import UIKit
 import Darwin
 
@@ -163,7 +163,8 @@ print(sum)
 
 /* lesson 10. Functions
   1. Create function, chess board, thet get two coordinates and print cell color.
-*/
+
+
 import UIKit
 import Darwin
 // 1
@@ -212,3 +213,66 @@ func emptyFunc() -> () -> (){
 }
 let printer = emptyFunc()
 printer()
+ */
+/*  lesson 11. Closures
+        1. Create function that get int array and closure, return int value, with max or min array's value.
+            Closure get two int values, one of them is optional, return bool    value
+        2. Find max and min character in line, by alphabet
+        3. Create text line, put it in array. Sorte it.
+ , сначально глассные, согласные, в алф. порядке, цифры, символы
+ */
+/*
+struct Student{
+    var name: String
+    var age: Int
+    var mark: String
+}
+var students = [Student]()
+
+let rob = Student(name: "Rob", age: 15, mark: "A")
+let james = Student(name: "James", age: 16, mark: "B")
+let bob = Student(name: "Bob", age: 14, mark: "A")
+let rebeca = Student(name: "Rebeca", age: 15, mark: "B")
+students.append(Student(name: "Jozef", age: 16, mark: "B"))
+students.append(Student(name: "Adolf", age: 15, mark: "A"))
+students.sort(by: {$0.mark < $1.mark})
+var students2: [Student] = [rob,james, bob, rebeca]
+students2.sort(by: {$0.age < $1.age})
+for student in students2{
+    print(student.name)
+}
+let array = [1, 13, 14, 28, 48, 32, 88, 47]
+let sortArray = array.sorted(by: {$0 < $1})
+sortArray
+*/
+
+
+
+
+let textLine = "Hello World! What's going on? ZZZ..."
+let alphabet: [Character] = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "g",
+                             "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+var alDictionary = [Character : Int]()
+for (index,word) in alphabet.enumerated(){
+    alDictionary.updateValue(index, forKey: word)
+}
+
+var index = Int()
+for word in textLine.lowercased(){
+    for w in alDictionary.keys{
+        if word == w{
+            if index < alDictionary[w]!{
+                index = alDictionary[w]!
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
