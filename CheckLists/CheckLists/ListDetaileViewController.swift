@@ -64,10 +64,12 @@ class ListDetaileViewController: UITableViewController,
     @IBAction func done() {
         if let checklist = checklistToEdit {
             checklist.name = textField.text!
+            checklist.iconName = iconName
             delegate?.listDetaileViewController(self,
                                                didFinishEditing: checklist)
         } else {
             let checklist = CheckList(name: textField.text!)
+            checklist.iconName = iconName
             delegate?.listDetaileViewController(self,
                                                didFinishAdding: checklist)
         }

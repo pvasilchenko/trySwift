@@ -26,7 +26,7 @@
             <objects>
                 <tableViewController id="I2I-xA-NUQ" customClass="ChecklistViewController" customModule="CheckLists" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" springLoaded="YES" id="Rab-B4-Vbb">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -85,7 +85,7 @@ FhYWFhbiiJo
             <objects>
                 <tableViewController id="dBk-OX-8Ss" customClass="ListDetaileViewController" customModule="CheckLists" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="03Q-38-5bf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -177,7 +177,7 @@ FhYWFhbiiJo
             <objects>
                 <tableViewController id="jny-Z9-u13" customClass="IconPickerViewController" customModule="CheckLists" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="DNF-zT-OhY">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -214,8 +214,8 @@ FhYWFhbiiJo
         <scene sceneID="JyQ-zU-5PW">
             <objects>
                 <navigationController storyboardIdentifier="ListDetailNavigationController" id="xrQ-Kx-y3i" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="blackTranslucent" id="V5t-SH-mzb">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="blackTranslucent" translucent="NO" largeTitles="YES" id="V5t-SH-mzb">
+                        <rect key="frame" x="0.0" y="20" width="320" height="93"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="0.57647058819999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
@@ -232,7 +232,7 @@ FhYWFhbiiJo
             <objects>
                 <tableViewController id="Xbh-eP-RpL" customClass="ItemDetailViewController" customModule="CheckLists" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="iux-NB-USx">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
@@ -300,9 +300,10 @@ FhYWFhbiiJo
             <objects>
                 <tableViewController id="yJq-rF-vhC" customClass="AllListsTableViewController" customModule="CheckLists" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="NNb-Nr-zAU">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="1" green="0.57647058819999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <connections>
                             <outlet property="dataSource" destination="yJq-rF-vhC" id="sWJ-Pj-zWr"/>
                             <outlet property="delegate" destination="yJq-rF-vhC" id="K8n-Rl-0mh"/>
@@ -328,8 +329,8 @@ FhYWFhbiiJo
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Yn4-ex-YkW" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="blackTranslucent" id="sUG-WL-9EM">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="blackTranslucent" translucent="NO" largeTitles="YES" id="sUG-WL-9EM">
+                        <rect key="frame" x="0.0" y="20" width="320" height="93"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="0.64861082370000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
@@ -347,8 +348,8 @@ FhYWFhbiiJo
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zRW-EY-XJp" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="blackTranslucent" id="WQ2-tN-OoC">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="blackTranslucent" translucent="NO" largeTitles="YES" id="WQ2-tN-OoC">
+                        <rect key="frame" x="0.0" y="20" width="320" height="93"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

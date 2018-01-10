@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
     let dataModel = DataModel()
@@ -19,7 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationController = window!.rootViewController as! UINavigationController
         let controller = navigationController.viewControllers[0] as! AllListsTableViewController
         controller.dataModel = dataModel
+        let center = UNUserNotificationCenter.current()
+        center.delegate = self
         return true
+    }
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        <#code#>
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
